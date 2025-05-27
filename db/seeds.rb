@@ -12,7 +12,8 @@ puts "Cleaing database..."
 Artwork.destroy_all
 
 puts "create database"
-art = Artwork.create!(name:"vic", description: "queen vic",
+userone = User.create!(name:"joe", email:"wget@gmail.com")
+art = Artwork.create!(name:"vic", description:"queen vic",
 location: "London", price: 12.3)
 
 puts "finished"
