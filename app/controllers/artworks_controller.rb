@@ -8,4 +8,16 @@ class ArtworksController < ApplicationController
   def new
     @artwork = Artwork.new # Needed to instantiate simple_form
   end
+
+  def create
+    @artwork = Artwork.new(params[:artwork])
+    @artwork.save  #Will raise ActiveModel::ForbiddenAttributesError
+    # No need for app/views/artworks/create.html.erb
+    redirect_to artwork_path(@artwork)
+  end
+
+  private
+
+  def artwork_params
+    params.require(:artwork).permit(:name :description :location :price)
 end
