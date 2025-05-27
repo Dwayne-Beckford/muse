@@ -7,3 +7,12 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+puts "Cleaing database..."
+Artwork.destroy_all
+
+puts "create database"
+art = Artwork.create!(name:"vic", description: "queen vic",
+location: "London", price: 12.3)
+
+puts "finished"
