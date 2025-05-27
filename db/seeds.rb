@@ -8,16 +8,23 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-puts "Cleaing database..."
+
+puts "Cleaning database..."
 Artwork.destroy_all
 User.destroy_all
 
-#create a user
-userone = User.create!(name:"joe", email:"wget@gmail.com", 
-password: "123456")
+puts "Creating a user..."
+user = User.create!(email:"diana@test.com", name:"Diana", password:"123456")
 
-puts "create database"
-art = Artwork.create!(name:"vic", description:"queen vic",
-location: "London", price: 12.3, user:userone)
+puts "Creating artworks..."
 
-puts "finished"
+3.times do
+  Artwork.create!(
+    name: "Mona Lisa",
+    description: "Masterpiece",
+    price: rand(100..500),
+    user: user
+  )
+end
+
+puts "Done! 🎨"
