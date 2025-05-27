@@ -1,7 +1,7 @@
-# app/controllers/artworks_controller.rb
-[...]
-class ArtworksController
-  def new
-    @artwork = Artwork.new
+class ArtworksController < ApplicationController
+  def index
+    @artworks = Artwork.all
   end
+
+  def
 end
