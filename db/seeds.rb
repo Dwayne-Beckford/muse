@@ -10,21 +10,28 @@
 
 
 puts "Cleaning database..."
+Booking.destroy_all
 Artwork.destroy_all
 User.destroy_all
 
 puts "Creating a user..."
-user = User.create!(email:"diana@test.com", name:"Diana", password:"123456")
+user = User.create!(email:"diana@test.com", name:"Diana", 
+  password:"123456")
 
 puts "Creating artworks..."
 
-3.times do
-  Artwork.create!(
+art = Artwork.create!(
     name: "Mona Lisa",
     description: "Masterpiece",
     price: rand(100..500),
     user: user
   )
-end
+
+puts "create booking"
+book = Booking.create!(user: user, artwork:art, 
+  start_date: Date.today, 
+  end_date: Date.today)
+
+
 
 puts "Done! 🎨"
