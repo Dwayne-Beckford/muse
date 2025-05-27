@@ -10,10 +10,14 @@
 
 puts "Cleaing database..."
 Artwork.destroy_all
+User.destroy_all
+
+#create a user
+userone = User.create!(name:"joe", email:"wget@gmail.com", 
+password: "123456")
 
 puts "create database"
-userone = User.create!(name:"joe", email:"wget@gmail.com")
 art = Artwork.create!(name:"vic", description:"queen vic",
-location: "London", price: 12.3)
+location: "London", price: 12.3, user:userone)
 
 puts "finished"
