@@ -11,7 +11,7 @@ class ArtworksController < ApplicationController
   end
 
   def create
-    @artwork = Artwork.new(params[:artwork])
+    @artwork = Artwork.new(artwork_params)
     @artwork.save  #Will raise ActiveModel::ForbiddenAttributesError
     # No need for app/views/artworks/create.html.erb
     redirect_to artwork_path(@artwork)
@@ -24,6 +24,6 @@ class ArtworksController < ApplicationController
   private
 
   def artwork_params
-    params.require(:artwork).permit(:name :description :location :price)
-
+    params.require(:artwork).permit(:name, :description, :location, :price)
+  end
 end

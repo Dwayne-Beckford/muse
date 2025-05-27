@@ -6,9 +6,13 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(params[:booking])
+    @booking = Booking.new(booking_params)
     @booking.save # Will raise ActiveModel::ForbiddenAttributesError
   end
+
+  def show
+    @bookings = Booking.find(params[:id])
+   end
 
   private
 
@@ -16,7 +20,5 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:start_date, :end_date)
   end
 
-  def show
-    @bookings = Booking.find(params[:id])
-   end
+
 end
