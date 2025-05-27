@@ -13,3 +13,4 @@ Rails.application.routes.draw do
   resources :artworks, only: [:index, :show] do
     resources :bookings, only: [:show]
 end
+end
