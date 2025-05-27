@@ -1,6 +1,7 @@
 # app/controllers/artworks_controller.rb
 #[...]
 class ArtworksController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
   def index
     @artworks = Artwork.all
   end
@@ -16,8 +17,13 @@ class ArtworksController < ApplicationController
     redirect_to artwork_path(@artwork)
   end
 
+  def show
+    @artwork = Artwork.find(params[:id])
+  end
+
   private
 
   def artwork_params
     params.require(:artwork).permit(:name :description :location :price)
+
 end

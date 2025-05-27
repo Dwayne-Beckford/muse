@@ -1,6 +1,6 @@
 #app/controllers/bookings_controller.rb
 # [...]
-
+class BookingsController < ApplicationController
   def new
     @booking = Booking.new
   end
@@ -15,3 +15,8 @@
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
   end
+
+  def show
+    @bookings = Booking.find(params[:id])
+   end
+end
