@@ -1,10 +1,17 @@
+<div class="container col-6 mt-5 mb-5">
+
 <h2> <%= @artwork.name %></h2>
 
-<%= @artwork.description %>
-<%= @artwork.location %>
-<%= @artwork.price %>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1920px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg" width="600px" class="mb-3">
+
+<p><%= @artwork.description %></p>
+<p>Location: <%= @artwork.location %></p>
+<p>Daily rate: <strong>$<%= @artwork.price %></strong></p>
+
+<h3>Make a reservation</h3>
 
 <%= render partial: "bookings/form", locals: { artwork: @artwork, booking: @booking } %>
 
-<%= link_to 'back', artworks_path, class: "btn btn-primary"%>
+<%= link_to 'return to all artworks', artworks_path%>
 
+</div>
