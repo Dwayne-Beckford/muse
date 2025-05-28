@@ -1,11 +1,15 @@
-<h1> Bookings </h1>
+<div class="container col-6 mt-5">
+
+<h1><%= @booking.artwork.name %> was Successfully Booked! </h1>
 
 <div>
-    <%= @booking.user.name %> 
-    <%= @booking.artwork.name %> 
-    <%= @booking.start_date %>
-    <%= @booking.end_date %>
+    <p>Reserved from: <%= @booking.start_date %></p>
+    <p>Reserved until: <%= @booking.end_date %></p>
+    <p>Artwork owner <strong><%= @booking.user.name %></strong> will contact you shortly.</p>
+
 </div>
 
 
-<%= link_to 'back', artworks_path, class: "btn btn-primary"%>
+<%= link_to 'See more artworks', artworks_path, class: "btn btn-primary"%>
+
+</div>
