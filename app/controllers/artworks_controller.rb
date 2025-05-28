@@ -13,9 +13,12 @@ class ArtworksController < ApplicationController
 
   def create
     @artwork = Artwork.new(artwork_params)
-    @artwork.save  #Will raise ActiveModel::ForbiddenAttributesError
-    # No need for app/views/artworks/create.html.erb
-    redirect_to artwork_path(@artwork)
+    @artwork.user = current_user
+    if @artwork.save
+      redirect_to artwork_path(@artwork), status: :see_other
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show

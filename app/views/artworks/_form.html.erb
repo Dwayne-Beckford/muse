@@ -1,4 +1,4 @@
-<%= simple_form_for(artworks) do |f| %>
+<%= simple_form_for [@user, @artwork] do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.input :location %>
