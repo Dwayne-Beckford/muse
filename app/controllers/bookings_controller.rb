@@ -1,3 +1,5 @@
+# app/controllers/bookings_controller.rb
+# [...]
 class BookingsController < ApplicationController
   before_action :set_artwork, only: [:new, :create]
 
@@ -18,6 +20,17 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+  end
+
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
+  def update
+    @booking = Artwork.find(params[:id])
+    @booking.update(booking_params) # Will raise ActiveModel::ForbiddenAttributesError
+    # No need for app/views/restaurants/update.html.erb
+    redirect_to booking_path(@booking)
   end
 
   private

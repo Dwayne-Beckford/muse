@@ -26,6 +26,17 @@ class ArtworksController < ApplicationController
     @booking = Booking.new
   end
 
+  def edit
+    @artwork = Artwork.find(params[:id])
+  end
+
+  def update
+    @artwork = Artwork.find(params[:id]) #Will raise ActiveModel::ForbiddenAttributesError
+    @artwork.update(artwork_params)
+    # No need for app/views/artworks/update.html.erb
+    redirect_to artwork_path(@artwork)
+  end
+
   private
 
   def artwork_params
