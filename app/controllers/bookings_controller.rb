@@ -1,7 +1,5 @@
-#app/controllers/bookings_controller.rb
-# [...]
 class BookingsController < ApplicationController
-   skip_before_action :authenticate_user!, only: [:show ]
+  before_action :set_artwork, only: [:new, :create]
 
   def new
     @booking = Booking.new
@@ -9,7 +7,13 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.save # Will raise ActiveModel::ForbiddenAttributesError
+    @booking.artwork = @artwork
+    @booking.user = current_user
+    if @booking.save
+      redirect_to @booking, status: :see_other
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show
@@ -17,6 +21,10 @@ class BookingsController < ApplicationController
   end
 
   private
+
+  def set_artwork
+    @artwork = Artwork.find(params[:artwork_id])
+  end
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
