@@ -1,6 +1,11 @@
 <h1> Bookings </h1>
 
-<%= @booking.user.name %> 
-<%= @booking.artwork.name %> 
-<%= @booking.start_date %>
-<%= @booking.end_date %>
+<div>
+    <%= @booking.user.name %> 
+    <%= @booking.artwork.name %> 
+    <%= @booking.start_date %>
+    <%= @booking.end_date %>
+</div>
+
+
+<%= link_to 'back', artworks_path, class: "btn btn-primary"%>
