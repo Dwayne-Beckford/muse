@@ -15,3 +15,6 @@
 <%= link_to 'return to all artworks', artworks_path%>
 
 </div>
+
+<%= link_to 'Delete', artwork_path(@artwork), data: 
+    {turbo_method: :delete, turbo_confirm: "Are you sure?"}%> 
