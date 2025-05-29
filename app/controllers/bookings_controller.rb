@@ -27,10 +27,10 @@ class BookingsController < ApplicationController
   end
 
   def update
-    @booking = Artwork.find(params[:id])
-    @booking.update(booking_params) # Will raise ActiveModel::ForbiddenAttributesError
-    # No need for app/views/restaurants/update.html.erb
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
     redirect_to booking_path(@booking)
+  end
 
   def destroy
     @booking = Booking.find(params[:id])
