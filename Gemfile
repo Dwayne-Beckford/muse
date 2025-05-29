@@ -1,3 +1,4 @@
+# Gemfile
 source "https://rubygems.org"
 
 ruby "3.3.5"
@@ -73,3 +74,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "cloudinary"

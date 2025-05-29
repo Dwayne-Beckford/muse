@@ -1,3 +1,5 @@
+# app/controllers/bookings_controller.rb
+# [...]
 class BookingsController < ApplicationController
   before_action :set_artwork, only: [:new, :create]
 
@@ -22,6 +24,16 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+  end
+
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    redirect_to booking_path(@booking)
   end
 
   def destroy

@@ -1,3 +1,6 @@
+# config/routes.rb
+# [...]
+
 Rails.application.routes.draw do
   get 'artworks/index'
   devise_for :users
@@ -10,8 +13,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :artworks, only: [:index, :new, :create, :show] do
-    resources :bookings, only: [:new, :create, :destroy]
+
+  resources :artworks, only: [:index, :new, :create, :show, :update, :edit, :destroy] do
+    resources :bookings, only: [:new, :create, :update, :edit]
   end
-  resources :bookings, only: [:show, :index, :destroy]
+
+  resources :bookings, only: [:show, :index, :destroy, :update, :edit]
 end
