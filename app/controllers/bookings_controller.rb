@@ -31,6 +31,11 @@ class BookingsController < ApplicationController
     @booking.update(booking_params) # Will raise ActiveModel::ForbiddenAttributesError
     # No need for app/views/restaurants/update.html.erb
     redirect_to booking_path(@booking)
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to artworks_path, status: :see_other
   end
 
   private
