@@ -39,6 +39,8 @@ class ArtworksController < ApplicationController
   def destroy
     @artwork = Artwork.find(params[:id])
     @artwork.destroy
+    # deletes the photo from the storage
+    @artwork.photo.purge
     redirect_to artworks_path, status: :see_other
   end
 
