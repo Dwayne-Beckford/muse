@@ -31,15 +31,15 @@ class ArtworksController < ApplicationController
   end
 
   def update
-    @artwork = Artwork.find(params[:id]) #Will raise ActiveModel::ForbiddenAttributesError
+    @artwork = Artwork.find(params[:id])
     @artwork.update(artwork_params)
-    # No need for app/views/artworks/update.html.erb
     redirect_to artwork_path(@artwork)
+  end
 
   def destroy
     @artwork = Artwork.find(params[:id])
     @artwork.destroy
-    redirect_to artworks_path, status: :see_other 
+    redirect_to artworks_path, status: :see_other
   end
 
   private
