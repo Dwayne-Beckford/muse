@@ -26,6 +26,22 @@ class ArtworksController < ApplicationController
     @booking = Booking.new
   end
 
+  def edit
+    @artwork = Artwork.find(params[:id])
+  end
+
+  def update
+    @artwork = Artwork.find(params[:id])
+    @artwork.update(artwork_params)
+    redirect_to artwork_path(@artwork)
+  end
+
+  def destroy
+    @artwork = Artwork.find(params[:id])
+    @artwork.destroy
+    redirect_to artworks_path, status: :see_other
+  end
+
   private
 
   def artwork_params

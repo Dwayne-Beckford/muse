@@ -18,6 +18,7 @@ art_two = Artwork.new(name: "Eclipse of the Sun", description: "Inter-war Weimar
 puts "Created Eclipse of the Sun"
 
 art_two = Artwork.new(name: "The Starry Night", description: "Van Gogh's night sky", location: "Louvre, Paris", price: 300, user: user)
+
 puts "Created Eclipse of the Sun"
 
 # 3. Creating bookings
