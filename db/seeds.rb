@@ -10,13 +10,15 @@ user = User.create!(email:"test@test.com", name:"Dave", password:"123456")
 # 2. Creating artworks
 puts "Creating artworks..."
 
-art_one = Artwork.create!(name: "The Great Tower", description: "De Chirico picture", location: "The Pushkin Museum", price: 200, user: user)
+art_one = Artwork.new(name: "The Great Tower", description: "De Chirico picture", location: "The Pushkin Museum", price: 200, user: user)
+art_one.save
 puts "Created The Great Tower"
 
-art_two = Artwork.create!(name: "Eclipse of the Sun", description: "Inter-war Weimar painting", location: "Heckscher", price: 300, user: user)
+art_two = Artwork.new(name: "Eclipse of the Sun", description: "Inter-war Weimar painting", location: "Heckscher", price: 300, user: user)
 puts "Created Eclipse of the Sun"
 
-art_two = Artwork.create!(name: "The Starry Night", description: "Van Gogh's night sky", location: "Louvre, Paris", price: 300, user: user)
+art_two = Artwork.new(name: "The Starry Night", description: "Van Gogh's night sky", location: "Louvre, Paris", price: 300, user: user)
+
 puts "Created Eclipse of the Sun"
 
 # 3. Creating bookings
