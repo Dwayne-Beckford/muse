@@ -5,6 +5,7 @@
    <%= book.user.name %>
    <%= book.start_date %>
    <%= book.end_date %>
+   <%= link_to 'edit', edit_booking_path(book) %>
    <%= link_to 'Delete', booking_path(book), data: 
       {turbo_method: :delete, turbo_confirm: "Are you sure?"}%> 
 <% end %>
