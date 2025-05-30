@@ -5,6 +5,7 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = current_user.bookings
+    @my_artwork_bookings = Booking.where(artwork: current_user.artworks)
   end
 
   def new
@@ -39,7 +40,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to artworks_path, status: :see_other
+    redirect_to bookings_path, status: :see_other
   end
 
   private
