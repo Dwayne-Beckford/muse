@@ -1,7 +1,9 @@
+/* Golden ratio adherent */
 .card-trip {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 320px;
 }
 
 .card-trip > img {
@@ -36,4 +38,10 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.card-trip button {
+  background-color: #04AA6D;
+  text-align: center;
+  display: inline-block;
 }
