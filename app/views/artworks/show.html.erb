@@ -10,7 +10,7 @@
 
 <p><%= @artwork.description %></p>
 <p>Location: <%= @artwork.location %></p>
-<p>Daily rate: <strong>$<%= @artwork.price %></strong></p>
+<p id="everyday_rate">Daily rate: <strong>$<%= @artwork.price %></strong></p>
 
 <h3>Make a reservation</h3>
 
@@ -19,4 +19,3 @@
 <%= link_to 'return to all artworks', artworks_path%>
 
 </div>
-
