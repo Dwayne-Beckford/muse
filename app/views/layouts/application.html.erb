@@ -10,13 +10,16 @@
     <%= javascript_importmap_tags %>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
-    <style> @import url('https://fonts.googleapis.com/css2?family=GFS+Didot&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-    </style>
   </head>
 
-  <body><%= render "shared/navbar" %>
-<%= render "shared/flashes" %>
-
-    <%= yield %>
+  <body>
+  <div class="page-container">
+    <%= render "shared/navbar" %>
+    <main class="content">
+      <%= render "shared/flashes" %>
+      <%= yield %>
+    </main>
+    <%= render "shared/footer" %>
+  </div>
   </body>
 </html>

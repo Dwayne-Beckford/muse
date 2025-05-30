@@ -1,6 +1,8 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $muse-beige;
+  border-bottom: 1px solid #9a8471;
+  color: $muse-black !important;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +10,9 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 100px;
+}
+
+.nav-link {
+  color: $muse-black
 }
