@@ -1,13 +1,19 @@
-<h2>My Booking's </h2>
+<div class="container col-6 mt-5 mb-5">
 
+<h2>My Bookings </h2>
+
+<div>
 <% @bookings.each do |book| %>
    <%= book.artwork.name %>
    <%= book.user.name %>
    <%= book.start_date %>
    <%= book.end_date %>
+   <br>
    <%= link_to 'edit', edit_booking_path(book) %>
-   <%= link_to 'Delete', booking_path(book), data: 
-      {turbo_method: :delete, turbo_confirm: "Are you sure?"}%> 
+   <%= link_to 'Delete', booking_path(book), data:
+      {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+  <br>
 <% end %>
+</div>
 
-
+</div>
