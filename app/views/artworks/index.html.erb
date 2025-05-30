@@ -15,25 +15,24 @@
 
 </section>
 
-<div class="container mt-5 d-flex justify-content-between">
+<div class="container mt-5 d-flex justify-content-center">
 
 <div class="artwork-grid">
   <% @artworks.each do |artwork| %>
-
     <%= link_to artwork_path(artwork) do %>
       <div class="card-trip mb-3">
         <% if artwork.photo.attached? %>
           <%= cl_image_tag artwork.photo.key, width: 400, crop: :fill %>
         <% else %>
-          <%= image_tag "lillies.jpg", width: 400 %>
+          <%= image_tag "dont-delete/hero.png", width: 400 %>
         <% end %>
         <div class="card-trip-infos">
           <div>
             <h2><%=artwork.name %></h2>
-            <p><%= artwork.description %></p>
+            <p class="mt-1"><%= artwork.description %></p>
+
+          <h2 class="card-trip-pricing mt-2 text-end">Rate: $<%= artwork.price %>/day</h2>
           </div>
-          <h2 class="card-trip-pricing">Rate: $<%= artwork.price %></h2>
-          <!-- <a href="http://[::1]:3000/artworks/#{id}" id="button">Lease</a> --
         </div>
       </div>
     <% end %>

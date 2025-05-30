@@ -2,8 +2,9 @@
 .card-trip {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 320px;
+  width: 240px;
+  border: 1px solid black;
+  text-decoration: none !important;
 }
 
 .card-trip > img {
@@ -19,7 +20,7 @@
 }
 
 .card-trip a {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .card-trip p {
@@ -28,13 +29,13 @@
   margin: 0;
 }
 
-
 .card-trip .card-trip-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  text-decoration: none !important;
 }
 
 .card-trip-infos .card-trip-user {
@@ -42,13 +43,8 @@
   right: 16px;
   top: -20px;
   width: 40px;
+  text-decoration: none !important;
 }
-
-.card-trip button {
-  background-color: #04AA6D;
-  text-align: center;
-  display: inline-block;
-
 
 .card-product {
   overflow: hidden;
@@ -85,3 +81,4 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+}
