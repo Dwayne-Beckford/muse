@@ -19,20 +19,24 @@
 
 <div class="artwork-grid">
   <% @artworks.each do |artwork| %>
-    <div class="card-trip mb-3">
-      <% if artwork.photo.attached? %>
-        <%= cl_image_tag artwork.photo.key, width: 400, crop: :fill %>
-      <% else %>
-        <%= image_tag "/dont-delete/hero.png", width: 400 %>
-      <% end %>
-      <div class="card-trip-infos">
-        <div>
-          <h2><%= link_to artwork.name, artwork_path(artwork) %></h2>
-          <p><%= artwork.description %></p>
+
+    <%= link_to artwork_path(artwork) do %>
+      <div class="card-trip mb-3">
+        <% if artwork.photo.attached? %>
+          <%= cl_image_tag artwork.photo.key, width: 400, crop: :fill %>
+        <% else %>
+          <%= image_tag "lillies.jpg", width: 400 %>
+        <% end %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%=artwork.name %></h2>
+            <p><%= artwork.description %></p>
+          </div>
+          <h2 class="card-trip-pricing">Rate: $<%= artwork.price %></h2>
+          <!-- <a href="http://[::1]:3000/artworks/#{id}" id="button">Lease</a> --
         </div>
-        <h2 class="card-trip-pricing">Rate: $<%= artwork.price %></h2>
       </div>
-    </div>
+    <% end %>
   <% end %>
 </div>
 
