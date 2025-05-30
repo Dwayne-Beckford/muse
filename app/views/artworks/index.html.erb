@@ -23,7 +23,7 @@
       <% if artwork.photo.attached? %>
         <%= cl_image_tag artwork.photo.key, width: 400, crop: :fill %>
       <% else %>
-        <%= image_tag "lillies.jpg", width: 400 %>
+        <%= image_tag "/dont-delete/hero.png", width: 400 %>
       <% end %>
       <div class="card-trip-infos">
         <div>
