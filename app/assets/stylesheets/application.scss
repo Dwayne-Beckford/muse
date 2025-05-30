@@ -10,3 +10,24 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+}
+
+input:not([type="submit"]),
+textarea,
+select {
+  border: 1px solid #9a8471 !important;
+}

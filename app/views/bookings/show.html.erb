@@ -1,18 +1,24 @@
 <div class="container col-6 mt-5 mb-5">
 
-<h1><%= @booking.artwork.name %> was Successfully Booked! </h1>
+<h1 class="mb-3"><%= @booking.artwork.name %> was Successfully Booked! </h1>
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1920px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg" width="600px" class="mb-3">
-
-<div>
-    <p>Reserved from <strong><%= @booking.start_date %></strong> until <%= @booking.end_date %></p>
-    <p>Artwork owner <strong><%= @booking.user.name %></strong> will contact you shortly regarding exchange details.</p>
-
+<div class="card-product mb-5">
+  <% if @booking.artwork.photo.attached? %>
+    <%= cl_image_tag @booking.artwork.photo.key %>
+    <% else %>
+    <%= image_tag "/dont-delete/hero.png", width: 400 %>
+  <% end %>
+  <div class="card-product-infos">
+    <h2><%= @booking.artwork.name %></h2>
+    <p>Reserved from <strong><%= @booking.start_date %></strong> until <strong><%= @booking.end_date %></strong>.</p>
+    <br>
+    <p>Owner: <%= @booking.user.name %></p>
+  </div>
 </div>
 
+<h3>What's next?</h3>
+<p class="mb-3">Artwork owner <strong><%= @booking.user.name %></strong> will contact you shortly regarding exchange details.</p>
 
 <%= link_to 'See more artworks', artworks_path, class: "btn btn-dark"%>
 <%= link_to "manage booking", bookings_path, class: "btn btn-dark" %>
 </div>
-
-

@@ -8,7 +8,7 @@
         <% if @artwork.photo.attached? %>
             <%= cl_image_tag @artwork.photo.key, width: 700, height: 500, crop: :fill, gravity: :center %>
         <% else %>
-          <%= image_tag "lillies.jpg", width: 400 %>
+          <%= image_tag "dont-delete/hero.png", width: 400 %>
         <% end %>
 
 <p><%= @artwork.description %></p>

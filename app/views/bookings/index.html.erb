@@ -8,7 +8,7 @@
   <% if book.artwork.photo.attached? %>
     <%= cl_image_tag book.artwork.photo.key %>
     <% else %>
-    <%= image_tag "lillies.jpg", width: 400 %>
+    <%= image_tag "dont-delete/hero.png", width: 400 %>
   <% end %>
   <div class="card-product-infos">
     <h2><%= book.artwork.name %></h2>
