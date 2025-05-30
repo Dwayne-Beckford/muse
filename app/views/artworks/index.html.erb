@@ -1,12 +1,14 @@
 <!-- app/views/artworks/index.html.erb -->
 
-<div class="banner mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://d3mbwbgtcl4x70.cloudfront.net/Ombre_Elegance_08ec1c43a1.webp);">
+<div class="d-flex align-items-center p-5">
   <div class="container">
-    <h1>Rent Art. Refresh Your Space.</h1>
-    <p>Curated art collections, delivered to your door. Swap pieces monthly, seasonally—or whenever you need a change.</p>
-    <a class="btn btn-dark" href="#all-works">Browse Collections</a>
-    <a class="btn btn-dark" href="/artworks/new">Add My Artwork</a>
+      <h1>Rent Art. Refresh Your Space.</h1>
+      <p>Curated art collections, delivered to your door. Swap pieces monthly, seasonally—or whenever you need a change.</p>
+      <a class="btn btn-dark" href="#all-works">Browse Collections</a>
+      <a class="btn btn-dark" href="/artworks/new">Add My Artwork</a>
   </div>
+
+  <%= image_tag("dont-delete/hero.png", id: "banner-img") %>
 </div>
 
 <section id="all-works">
