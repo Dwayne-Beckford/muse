@@ -31,7 +31,7 @@ art_three.save
 puts "Created 3"
 
 file_four = File.open("app/assets/images/self portrait.jpeg")
-art_four = Artwork.new(name: "Self portrait", description: "Frida Kahlo Frida fierce and fabulous, turning pain into power and petals.", location: "University of Texas at Austin. ", price: 20000, user: user)
+art_four = Artwork.new(name: "Self Portrait", description: "Frida Kahlo Frida fierce and fabulous, turning pain into power and petals.", location: "University of Texas at Austin. ", price: 20000, user: user)
 art_four.photo.attach(io: file_four, filename: "self-portrait.jpeg", content_type: "image/jpeg")
 art_four.save
 puts "Created 4"
@@ -49,8 +49,7 @@ art_six.save
 puts "Created 6"
 
 file_seven = File.open("app/assets/images/the last supper.jpeg")
-art_seven = Artwork.new(name: "The Last Supper ", description: " Leonardo da Vinci
- The most dramatic dinner party in history—spoiler alert: betrayal's on the menu.", location: "milano", price: 100000 , user: user)
+art_seven = Artwork.new(name: "The Last Supper ", description: " Leonardo da Vinci The most dramatic dinner party in history—spoiler alert: betrayal's on the menu.", location: "milano", price: 100000 , user: user)
 art_seven.photo.attach(io: file_seven, filename: "The Last Supper", content_type: "image/jpeg")
 art_seven.save
 puts "Created 7"
@@ -74,13 +73,13 @@ art_ten.save
 puts "Created 10"
 
 file_eleven = File.open("app/assets/images/thekiss.jpeg")
-art_eleven = Artwork.new(name: "The kiss", description: "The Kiss by Gustav Klimt A shimmering embrace covered in gold leaf—this romantic painting is all about love, luxury, and intimacy.", location: "Vienna ", price:11990 , user: user)
+art_eleven = Artwork.new(name: "The Kiss", description: "The Kiss by Gustav Klimt A shimmering embrace covered in gold leaf—this romantic painting is all about love, luxury, and intimacy.", location: "Vienna ", price:11990 , user: user)
 art_eleven.photo.attach(io: file_eleven, filename: "thekiss", content_type: "image/jpeg")
 art_eleven.save
 puts "Created 11"
 
 file_twelve = File.open("app/assets/images/thescream.jpeg")
-art_twelve = Artwork.new(name: "the scream", description: "The Scream by Edvard Munch A figure screams in horror as the world around them bends and warps—an iconic image of existential dread.", location: "National Museum in Oslo ", price: 199900, user: user)
+art_twelve = Artwork.new(name: "The Scream", description: "The Scream by Edvard Munch A figure screams in horror as the world around them bends and warps—an iconic image of existential dread.", location: "National Museum in Oslo ", price: 199900, user: user)
 art_twelve.photo.attach(io: file_twelve, filename: "thescream.jpeg", content_type: "image/jpeg")
 art_twelve.save
 puts "Created 12"
@@ -98,19 +97,19 @@ art_fourteen.save
 puts "Created 14"
 
 file_fifteen = File.open("app/assets/images/creation.jpeg")
-art_fifteen = Artwork.new(name: "the creation", description: "The Creation of Adam by Michelangelo Two outstretched hands almost touch, symbolizing the divine connection between God and man—classic biblical art at its most powerful.", location: "Sistine Chapel", price:109340, user: user)
+art_fifteen = Artwork.new(name: "The Creation", description: "The Creation of Adam by Michelangelo Two outstretched hands almost touch, symbolizing the divine connection between God and man.", location: "Sistine Chapel", price:109340, user: user)
 art_fifteen.photo.attach(io: file_fifteen, filename: "the creation", content_type: "image/jpeg")
 art_fifteen.save
 puts "Created 15"
 
 file_sixteen = File.open("app/assets/images/schoolofathens.jpeg")
-art_sixteen = Artwork.new(name: "the school of athens", description: "The School of Athens by Raphael A dream team of ancient philosophers, gathered in a grand hall—Plato and Aristotle lead the pack, but everyone’s got something to say.", location: " Vatican City", price:450000, user: user)
+art_sixteen = Artwork.new(name: "The School Of Athens", description: "The School of Athens by Raphael A dream team of ancient philosophers, gathered in a grand hall—Plato and Aristotle lead the pack.", location: " Vatican City", price:450000, user: user)
 art_sixteen.photo.attach(io: file_ten, filename: "the school of athens", content_type: "images/jpeg")
 art_sixteen.save
 puts "Created  16"
 
 file_seventeen = File.open("app/assets/images/thehaywain.jpeg")
-art_seventeen = Artwork.new(name: "the hay wain", description: "The Hay Wain by John Constable A peaceful countryside scene with a cart being pulled through a river, a bucolic vision of rural life that feels like a warm breeze.", location: "national gallery ", price: 300000, user: user)
+art_seventeen = Artwork.new(name: "The Hay Wain", description: "The Hay Wain by John Constable A peaceful countryside scene with a cart being pulled through a river.", location: "national gallery ", price: 300000, user: user)
 art_seventeen.photo.attach(io: file_seventeen, filename: "the hay wain", content_type: "image/jpeg")
 art_seventeen.save
 puts "Created 17"
@@ -121,13 +120,13 @@ art_eighteen.photo.attach(io: file_eighteen, filename: "Olympia.jpeg", content_t
 art_eighteen.save
 puts "Created 18"
 file_nineteen = File.open("app/assets/images/girlwithredhat.jpeg")
-art_nineteen= Artwork.new(name: "Girl with the red hat", description: "Girl with the Red Hat by Johannes Vermeer A quietly striking portrait of a young woman with a fashionable red hat—Vermeer’s mastery of light brings her to life with just a hint of mystery.", location: "National Gallery of Art, Washington, D.C", price: 450000 , user: user)
+art_nineteen= Artwork.new(name: "Girl with the Red Hat", description: "Girl with the Red Hat by Johannes Vermeer A quietly striking portrait of a young woman with a fashionable red hat.", location: "National Gallery of Art, Washington, D.C", price: 450000 , user: user)
 art_nineteen.photo.attach(io: file_nineteen, filename: "girl with red hat", content_type: "image/jpeg")
 art_nineteen.save
 puts "Created 19"
 
 file_twenty = File.open("app/assets/images/arnolfini.jpeg")
-art_twenty = Artwork.new(name: "The Arnolfini Portrait by Jan van Eyck A mysterious wedding scene where the couple stands frozen in time—check out the intricate details, from the chandelier to the dog!", description: "", location: "National gallery", price: 300000 , user: user)
+art_twenty = Artwork.new(name: "The Arnolfini", description: "Portrait by Jan van Eyck A mysterious wedding scene where the couple stands frozen in time—check", location: "National gallery", price: 300000 , user: user)
 art_twenty.photo.attach(io: file_twenty, filename: "arnolfini", content_type: "images/jpeg")
 art_twenty.save
 puts "Created 20"
