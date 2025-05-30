@@ -7,6 +7,9 @@
 $body-font: "Inter", "Helvetica", sans-serif;
 $headers-font: "GFS Didot", "Helvetica", serif;
 
+body {
+  font-weight: 300 !important;
+}
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
