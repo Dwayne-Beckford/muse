@@ -1,22 +1,28 @@
-<div class="container col-6 mt-5 mb-5">
+<div class="container mt-5 mb-5">
+  <%= link_to 'return to all artworks', artworks_path%>
+    <div class="row">
+      <div class="col-md-8">
 
-<h2> <%= @artwork.name %></h2>
+        <h2> <%= @artwork.name %></h2>
 
-<% if @artwork.photo.attached? %>
-    <%= cl_image_tag @artwork.photo.key, width: 400, crop: :fill %>
-<% else %>
-  <%= image_tag "lillies.jpg", width: 400 %>
-<% end %>
+        <% if @artwork.photo.attached? %>
+            <%= cl_image_tag @artwork.photo.key, width: 400, crop: :fill %>
+        <% else %>
+          <%= image_tag "lillies.jpg", width: 400 %>
+        <% end %>
 
-<p><%= @artwork.description %></p>
-<p>Location: <%= @artwork.location %></p>
-<p>Daily rate: <strong>$<%= @artwork.price %></strong></p>
+        <p><%= @artwork.description %></p>
+        <p>Location: <%= @artwork.location %></p>
+        <p>Daily rate: <strong>$<%= @artwork.price %></strong></p>
 
-<h3>Make a reservation</h3>
+      </div>
 
-<%= render partial: "bookings/form", locals: { artwork: @artwork, booking: @booking } %>
+      <div class="col-md-4">
 
-<%= link_to 'return to all artworks', artworks_path%>
+        <h3>Make a reservation</h3>
 
+        <%= render partial: "bookings/form", locals: { artwork: @artwork, booking: @booking } %>
+
+      </div>
+    </div>
 </div>
-
