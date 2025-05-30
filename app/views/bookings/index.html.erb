@@ -1,19 +1,25 @@
 <div class="container col-6 mt-5 mb-5">
 
-<h2>My Bookings </h2>
+<h2 class="mb-3">My Bookings</h2>
 
-<div>
+
 <% @bookings.each do |book| %>
-   <%= book.artwork.name %>
-   <%= book.user.name %>
-   <%= book.start_date %>
-   <%= book.end_date %>
-   <br>
-   <%= link_to 'edit', edit_booking_path(book) %>
+<div class="card-product mb-3">
+  <% if book.artwork.photo.attached? %>
+    <%= cl_image_tag book.artwork.photo.key %>
+    <% else %>
+    <%= image_tag "lillies.jpg", width: 400 %>
+  <% end %>
+  <div class="card-product-infos">
+    <h2><%= book.artwork.name %></h2>
+    <p>Reserved from <strong><%= book.start_date %></strong> until <strong><%= book.end_date %></strong>.</p>
+    <br>
+   <%= link_to 'Modify', edit_booking_path(book) %>
    <%= link_to 'Delete', booking_path(book), data:
       {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
   <br>
-<% end %>
+  </div>
 </div>
+<% end %>
 
 </div>
